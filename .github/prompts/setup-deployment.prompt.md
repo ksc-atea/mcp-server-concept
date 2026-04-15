@@ -168,11 +168,24 @@ Print a checklist of every action completed. Mark each item ✅:
 ✅ AZURE_CREDENTIALS secret set in GitHub Actions
 ✅ ACR_NAME_DEV variable set to {EnvironmentName}
 ✅ ACR_NAME_PROD variable set to {EnvironmentName}
+✅ Workflow templates copied to .github/workflows/
 ```
 
 ---
 
-## Step 9 — Commit and push to trigger deployment
+## Step 9 — Copy workflow templates to workflows folder
+
+Copy the three GitHub Actions workflow templates from `.github/templates/` to `.github/workflows/`:
+
+```
+cp .github/templates/deploy-bicep.yml .github/workflows/
+cp .github/templates/docker-deploy-containerapp-template.yml .github/workflows/
+cp .github/templates/docker-publish-template.yml .github/workflows/
+```
+
+---
+
+## Step 10 — Commit and push to trigger deployment
 
 Review your changes:
 
@@ -180,10 +193,10 @@ Review your changes:
 git status
 ```
 
-You should see `Infrastructure/dev.bicepparam` modified. Commit and push the changes:
+You should see `Infrastructure/dev.bicepparam` modified and the three workflow files in `.github/workflows/`. Commit and push the changes:
 
 ```
-git add Infrastructure/dev.bicepparam
+git add Infrastructure/dev.bicepparam .github/workflows/
 git commit -m "Configure MCP environment: {EnvironmentName}"
 git push
 ```
