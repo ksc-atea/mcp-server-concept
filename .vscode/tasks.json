@@ -1,4 +1,15 @@
 {
   "version": "2.0.0",
-  "tasks": []
+  "tasks": [
+    {
+      "label": "build Nationalize",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/MCPServers/Nationalize/Nationalize.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    }
+  ]
 }
