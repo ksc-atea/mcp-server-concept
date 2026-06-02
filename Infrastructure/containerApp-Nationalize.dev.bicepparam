@@ -34,11 +34,11 @@ param environment = [
   }
   {
     name: 'EntraIdAuth__PublicUrl'
-    value: 'TODO-public-url-after-first-deploy'
+    value: 'https://nationalize.mangodesert-387a277b.westeurope.azurecontainerapps.io'
   }
   {
     name: 'NationalizeApi__BaseUrl'
-    value: 'TODO-upstream-api-base-url'
+    value: 'https://api.nationalize.io'
   }
   {
     name: 'IsTransportStateless'
